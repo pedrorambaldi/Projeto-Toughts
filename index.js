@@ -13,7 +13,8 @@ const Tought = require("./models/Tought");
 const User = require("./models/User");
 
 // IMPORT ROUTES
-const toughtsRoutes = require('./routes/toughtsRoutes',);
+const toughtsRoutes = require('./routes/toughtsRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 // IMPORT CONTROLLER
 const ToughtCotroller = require("./controllers/ToughtController");
@@ -68,6 +69,7 @@ app.use((req, res, next) => {
 
 // ROUTES
 app.use('/toughts', toughtsRoutes)
+app.use('/', authRoutes)
 
 app.get('/', ToughtCotroller.showThoughts)
 
